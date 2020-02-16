@@ -1,17 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using System.Text;
 
-namespace StayAwake
+namespace Services
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            PowerHelper.ForceSystemAwake();
-            Console.ReadKey();
-        }
-    }
-
     public class PowerHelper
     {
         // keep program running and system up.
