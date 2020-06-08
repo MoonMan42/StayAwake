@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -25,6 +26,9 @@ namespace MrDuck
         {
             InitializeComponent();
             PowerHelper.ForceSystemAwake();
+
+            SoundPlayer player = new SoundPlayer(MrDuck.AudioResource.Quack);
+            player.Play();
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)

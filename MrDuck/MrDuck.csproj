@@ -8,7 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="rubberDuck.png" />
     <None Remove="rubberDuck2.png" />
   </ItemGroup>
 
@@ -17,8 +16,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="rubberDuck.png" />
     <Resource Include="rubberDuck2.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="AudioResource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AudioResource.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="AudioResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AudioResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>
