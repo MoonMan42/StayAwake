@@ -1,19 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Services;
 using System.Media;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Services;
 
 namespace MrDuck
 {
@@ -27,16 +15,27 @@ namespace MrDuck
             InitializeComponent();
             PowerHelper.ForceSystemAwake();
 
-            SoundPlayer player = new SoundPlayer(MrDuck.AudioResource.Quack);
-            player.Play();
+            PlayQuack();
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left)
             {
+                PlayQuack();
                 this.DragMove();
             }
+        }
+
+        private void PlayQuack()
+        {
+            SoundPlayer player = new SoundPlayer(MrDuck.AudioResource.Quack);
+            player.Play();
+        }
+
+        private void ExitProgram(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }
