@@ -16,8 +16,8 @@
         <Image HorizontalAlignment="center" Height="75"  VerticalAlignment="center" Width="100" Source="rubberDuck2.png" >
             <Image.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Header="Quack!" Click="PlayQuack_Click" />
                     <MenuItem Header="StayAwake" IsCheckable="True" IsChecked="True" Checked="StayAwake_Checked" Unchecked="DoNotStayAwake_UnChecked" />
+                    <MenuItem Header="Mute" IsCheckable="True" IsChecked="False" Checked="MuteDuck_Checked" Unchecked="UnMuteDuck_UnChecked" />
                     <MenuItem Header="Exit" Click="ExitProgram"/>
                 </ContextMenu>
             </Image.ContextMenu>

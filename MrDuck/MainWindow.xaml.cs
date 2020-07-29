@@ -1,4 +1,5 @@
 ﻿using Services;
+using System.IO;
 using System.Media;
 using System.Windows;
 using System.Windows.Input;
@@ -10,10 +11,16 @@ namespace MrDuck
     /// </summary>
     public partial class MainWindow : Window
     {
+        private bool isMute;
+
         public MainWindow()
         {
             InitializeComponent();
 
+            isMute = false; // set isMute default value and then check settings
+
+            // see if program is muted
+            ReadSavedSettings();
 
             PlayQuack();
         }
@@ -32,11 +39,6 @@ namespace MrDuck
             PlayQuack();
         }
 
-        private void PlayQuack()
-        {
-            SoundPlayer player = new SoundPlayer(MrDuck.AudioResource.Quack);
-            player.Play();
-        }
 
         private void ExitProgram(object sender, RoutedEventArgs e)
         {
@@ -52,5 +54,59 @@ namespace MrDuck
         {
             PowerHelper.ResetSystemDefault();
         }
+
+        private void MuteDuck_Checked(object sender, RoutedEventArgs e)
+        {
+            isMute = true;
+            UpdateReadSettings();
+        }
+
+        private void UnMuteDuck_UnChecked(object sender, RoutedEventArgs e)
+        {
+            isMute = false;
+            UpdateReadSettings();
+        }
+
+
+        private void PlayQuack()
+        {
+            if (!isMute)
+            {
+                SoundPlayer player = new SoundPlayer(MrDuck.AudioResource.Quack);
+                player.Play();
+            }
+        }
+
+        private void ReadSavedSettings()
+        {
+            try
+            {
+                using (var sr = new StreamReader("SettingsFile.txt"))
+                {
+                    isMute = bool.Parse(sr.ReadToEnd());
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void UpdateReadSettings()
+        {
+            try
+            {
+                using (var sw = new StreamWriter("SettingsFile.txt"))
+                {
+                    sw.WriteLine(isMute.ToString());
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
+
     }
 }
