@@ -13,7 +13,7 @@ namespace MrDuck
         public MainWindow()
         {
             InitializeComponent();
-            PowerHelper.ForceSystemAwake();
+
 
             PlayQuack();
         }
@@ -27,6 +27,11 @@ namespace MrDuck
             }
         }
 
+        private void PlayQuack_Click(object sender, RoutedEventArgs e)
+        {
+            PlayQuack();
+        }
+
         private void PlayQuack()
         {
             SoundPlayer player = new SoundPlayer(MrDuck.AudioResource.Quack);
@@ -36,6 +41,16 @@ namespace MrDuck
         private void ExitProgram(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void StayAwake_Checked(object sender, RoutedEventArgs e)
+        {
+            PowerHelper.ForceSystemAwake();
+        }
+
+        private void DoNotStayAwake_UnChecked(object sender, RoutedEventArgs e)
+        {
+            PowerHelper.ResetSystemDefault();
         }
     }
 }
