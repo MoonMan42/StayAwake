@@ -17,7 +17,7 @@
             <Image.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="StayAwake" IsCheckable="True" IsChecked="True" Checked="StayAwake_Checked" Unchecked="DoNotStayAwake_UnChecked" />
-                    <MenuItem Header="Mute" IsCheckable="True" IsChecked="False" Checked="MuteDuck_Checked" Unchecked="UnMuteDuck_UnChecked" />
+                    <MenuItem x:Name="muteCheckMenuHeader" Header="Mute" IsCheckable="True" IsChecked="False" Checked="MuteDuck_Checked" Unchecked="UnMuteDuck_UnChecked" />
                     <MenuItem Header="Exit" Click="ExitProgram"/>
                 </ContextMenu>
             </Image.ContextMenu>

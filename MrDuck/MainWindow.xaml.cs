@@ -22,6 +22,11 @@ namespace MrDuck
             // see if program is muted
             ReadSavedSettings();
 
+            if (isMute)
+            {
+                muteCheckMenuHeader.IsChecked = true;
+            }
+
             PlayQuack();
         }
 
