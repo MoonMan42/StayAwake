@@ -16,7 +16,7 @@
         <Image HorizontalAlignment="center" Height="75"  VerticalAlignment="center" Width="100" Source="rubberDuck2.png" >
             <Image.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Header="StayAwake" IsCheckable="True" IsChecked="True" Checked="StayAwake_Checked" Unchecked="DoNotStayAwake_UnChecked" />
+                    <!--<MenuItem x:Name="stayAwakeHeader" Header="Stay Awake" IsCheckable="True" IsChecked="True" Checked="StayAwake_Checked" Unchecked="DoNotStayAwake_UnChecked" />-->
                     <MenuItem x:Name="muteCheckMenuHeader" Header="Mute" IsCheckable="True" IsChecked="False" Checked="MuteDuck_Checked" Unchecked="UnMuteDuck_UnChecked" />
                     <MenuItem Header="Exit" Click="ExitProgram"/>
                 </ContextMenu>
