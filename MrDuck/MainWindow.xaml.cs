@@ -15,7 +15,7 @@ namespace MrDuck
     {
         private bool isMute;
 
-        private static Timer _timer;
+        private static Timer _timer = new Timer(50000); // 5 sec interval;
 
 
         public MainWindow()
@@ -37,7 +37,6 @@ namespace MrDuck
             PlayQuack();
 
             // check time (disable/activate based off time)
-            _timer = new Timer(50000); // 5 sec interval
             _timer.Elapsed += CheckTime;
             _timer.Start();
         }
@@ -83,11 +82,14 @@ namespace MrDuck
         private void StayAwake_Checked(object sender, RoutedEventArgs e)
         {
             PowerHelper.ForceSystemAwake();
+            _timer.Start();
         }
 
         private void DoNotStayAwake_UnChecked(object sender, RoutedEventArgs e)
         {
             PowerHelper.ResetSystemDefault();
+            
+            _timer.Stop();
         }
 
         private void MuteDuck_Checked(object sender, RoutedEventArgs e)
