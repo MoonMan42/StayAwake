@@ -18,7 +18,6 @@ namespace MrDuck
         private static Timer _timer;
 
 
-
         public MainWindow()
         {
             InitializeComponent();
@@ -31,7 +30,6 @@ namespace MrDuck
             if (isMute)
             {
                 muteCheckMenuHeader.IsChecked = true;
-
             }
 
 
@@ -42,8 +40,9 @@ namespace MrDuck
             _timer = new Timer(50000); // 5 sec interval
             _timer.Elapsed += CheckTime;
             _timer.Start();
-
         }
+
+
 
         private void CheckTime(Object source, ElapsedEventArgs e)
         {
@@ -51,12 +50,15 @@ namespace MrDuck
             if (date.Hour >= 0 && date.Hour <= 12)
             {
                 PowerHelper.ResetSystemDefault();
+                this.Dispatcher.Invoke(() => stayAwakeHeader.IsChecked = false);
             }
             else if (date.Hour >= 12 && date.Hour <= 24)
             {
                 PowerHelper.ForceSystemAwake();
+                this.Dispatcher.Invoke(() => stayAwakeHeader.IsChecked = true);
             }
         }
+
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
