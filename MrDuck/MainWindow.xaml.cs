@@ -1,8 +1,6 @@
 ﻿using Services;
-using System;
 using System.IO;
 using System.Media;
-using System.Timers;
 using System.Windows;
 using System.Windows.Input;
 
@@ -14,8 +12,6 @@ namespace MrDuck
     public partial class MainWindow : Window
     {
         private bool isMute;
-
-        private static Timer _timer = new Timer(50000); // 5 sec interval;
 
 
         public MainWindow()
@@ -35,28 +31,10 @@ namespace MrDuck
 
             // play quack
             PlayQuack();
-
-            // check time (disable/activate based off time)
-            _timer.Elapsed += CheckTime;
-            _timer.Start();
         }
 
 
 
-        private void CheckTime(Object source, ElapsedEventArgs e)
-        {
-            var date = DateTime.Now;
-            if (date.Hour >= 0 && date.Hour <= 12)
-            {
-                PowerHelper.ResetSystemDefault();
-                this.Dispatcher.Invoke(() => stayAwakeHeader.IsChecked = false);
-            }
-            else if (date.Hour >= 12 && date.Hour <= 24)
-            {
-                PowerHelper.ForceSystemAwake();
-                this.Dispatcher.Invoke(() => stayAwakeHeader.IsChecked = true);
-            }
-        }
 
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -82,14 +60,11 @@ namespace MrDuck
         private void StayAwake_Checked(object sender, RoutedEventArgs e)
         {
             PowerHelper.ForceSystemAwake();
-            _timer.Start();
         }
 
         private void DoNotStayAwake_UnChecked(object sender, RoutedEventArgs e)
         {
             PowerHelper.ResetSystemDefault();
-            
-            _timer.Stop();
         }
 
         private void MuteDuck_Checked(object sender, RoutedEventArgs e)
