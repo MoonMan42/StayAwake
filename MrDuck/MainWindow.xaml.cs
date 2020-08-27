@@ -1,4 +1,5 @@
 ﻿using Services;
+using System;
 using System.IO;
 using System.Media;
 using System.Windows;
@@ -48,7 +49,10 @@ namespace MrDuck
 
         private void PlayQuack_Click(object sender, RoutedEventArgs e)
         {
+
+
             PlayQuack();
+
         }
 
 
@@ -82,10 +86,17 @@ namespace MrDuck
 
         private void PlayQuack()
         {
-            if (!isMute)
+            Random ran = new Random();
+            int r = ran.Next(1, 7); // dice roll
+
+
+            if (r >= 4)
             {
-                SoundPlayer player = new SoundPlayer(MrDuck.AudioResource.Quack);
-                player.Play();
+                if (!isMute)
+                {
+                    SoundPlayer player = new SoundPlayer(MrDuck.AudioResource.Quack);
+                    player.Play();
+                }
             }
         }
 
