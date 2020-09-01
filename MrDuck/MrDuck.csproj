@@ -25,6 +25,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>AudioResource.resx</DependentUpon>
     </Compile>
+    <Compile Update="MrDuckSettings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MrDuckSettings.settings</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -32,6 +37,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>AudioResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="MrDuckSettings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>MrDuckSettings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
 </Project>

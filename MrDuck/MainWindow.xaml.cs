@@ -22,7 +22,7 @@ namespace MrDuck
             isMute = false; // set isMute default value and then check settings
 
             // see if program is muted
-            ReadSavedSettings();
+            isMute = MrDuckSettings.Default.IsMrDuckMute;
 
             if (isMute)
             {
@@ -47,15 +47,6 @@ namespace MrDuck
             }
         }
 
-        private void PlayQuack_Click(object sender, RoutedEventArgs e)
-        {
-
-
-            PlayQuack();
-
-        }
-
-
         private void ExitProgram(object sender, RoutedEventArgs e)
         {
             Close();
@@ -73,15 +64,23 @@ namespace MrDuck
 
         private void MuteDuck_Checked(object sender, RoutedEventArgs e)
         {
-            isMute = true;
-            UpdateReadSettings();
+
+            if (!muteCheckMenuHeader.IsChecked)
+            {
+                isMute = false;
+
+
+            }
+            else
+            {
+                isMute = true;
+
+            }
+
+            MrDuckSettings.Default.IsMrDuckMute = isMute;
+            MrDuckSettings.Default.Save();
         }
 
-        private void UnMuteDuck_UnChecked(object sender, RoutedEventArgs e)
-        {
-            isMute = false;
-            UpdateReadSettings();
-        }
 
 
         private void PlayQuack()
@@ -97,36 +96,6 @@ namespace MrDuck
                     SoundPlayer player = new SoundPlayer(MrDuck.AudioResource.Quack);
                     player.Play();
                 }
-            }
-        }
-
-        private void ReadSavedSettings()
-        {
-            try
-            {
-                using (var sr = new StreamReader("SettingsFile.txt"))
-                {
-                    isMute = bool.Parse(sr.ReadToEnd());
-                }
-            }
-            catch
-            {
-
-            }
-        }
-
-        private void UpdateReadSettings()
-        {
-            try
-            {
-                using (var sw = new StreamWriter("SettingsFile.txt"))
-                {
-                    sw.WriteLine(isMute.ToString());
-                }
-            }
-            catch
-            {
-
             }
         }
     }
