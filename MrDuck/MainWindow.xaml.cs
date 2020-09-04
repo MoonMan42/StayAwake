@@ -85,18 +85,13 @@ namespace MrDuck
 
         private void PlayQuack()
         {
-            Random ran = new Random();
-            int r = ran.Next(1, 7); // dice roll
-
-
-            if (r >= 4)
+            
+            if (!isMute)
             {
-                if (!isMute)
-                {
-                    SoundPlayer player = new SoundPlayer(MrDuck.AudioResource.Quack);
-                    player.Play();
-                }
+                SoundPlayer player = new SoundPlayer(MrDuck.AudioResource.Quack);
+                player.Play();
             }
+            
         }
     }
 }
