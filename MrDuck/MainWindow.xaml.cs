@@ -40,11 +40,11 @@ namespace MrDuck
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (e.ChangedButton == MouseButton.Left)
-            {
-                PlayQuack();
-                this.DragMove();
-            }
+            //if (e.ChangedButton == MouseButton.Left)
+            //{
+            //    PlayQuack();
+            //    this.DragMove();
+            //}
         }
 
         private void ExitProgram(object sender, RoutedEventArgs e)
