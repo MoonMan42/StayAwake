@@ -30,7 +30,7 @@ namespace MrDuck
             }
 
 
-            // play quack
+            // play quack at startup
             PlayQuack();
         }
 
@@ -40,11 +40,11 @@ namespace MrDuck
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            //if (e.ChangedButton == MouseButton.Left)
-            //{
-            //    PlayQuack();
-            //    this.DragMove();
-            //}
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                //PlayQuack();
+                this.DragMove();
+            }
         }
 
         private void ExitProgram(object sender, RoutedEventArgs e)
@@ -85,18 +85,19 @@ namespace MrDuck
 
         private void PlayQuack()
         {
-            Random ran = new Random();
-            int r = ran.Next(1, 7); // dice roll
 
-
-            if (r >= 4)
+            if (!isMute)
             {
-                if (!isMute)
-                {
-                    SoundPlayer player = new SoundPlayer(MrDuck.AudioResource.Quack);
-                    player.Play();
-                }
+                SoundPlayer player = new SoundPlayer(MrDuck.AudioResource.Quack);
+                player.Play();
             }
+
+        }
+
+        private void Quack_Click(object sender, RoutedEventArgs e)
+        {
+            SoundPlayer player = new SoundPlayer(MrDuck.AudioResource.Quack);
+            player.Play();
         }
     }
 }
