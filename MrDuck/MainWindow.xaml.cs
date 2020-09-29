@@ -85,19 +85,13 @@ namespace MrDuck
 
         private void PlayQuack()
         {
-
+            
             if (!isMute)
             {
                 SoundPlayer player = new SoundPlayer(MrDuck.AudioResource.Quack);
                 player.Play();
             }
-
-        }
-
-        private void Quack_Clicked(object sender, RoutedEventArgs e)
-        {
-            SoundPlayer player = new SoundPlayer(MrDuck.AudioResource.Quack);
-            player.Play();
+            
         }
     }
 }
