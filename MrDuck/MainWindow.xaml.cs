@@ -34,21 +34,25 @@ namespace MrDuck
             PlayQuack();
         }
 
-
-
-
+     
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left)
             {
-                //PlayQuack();
+                PlayQuack();
                 this.DragMove();
             }
         }
 
+        private void Close_Duck(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            PowerHelper.ResetSystemDefault();
+        }
+
         private void ExitProgram(object sender, RoutedEventArgs e)
         {
+            PowerHelper.ResetSystemDefault();
             Close();
         }
 
@@ -99,5 +103,7 @@ namespace MrDuck
             SoundPlayer player = new SoundPlayer(MrDuck.AudioResource.Quack);
             player.Play();
         }
+
+
     }
 }
