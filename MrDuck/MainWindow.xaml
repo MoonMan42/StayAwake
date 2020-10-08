@@ -11,7 +11,6 @@
         Background="Transparent"
         MouseDown="Window_MouseDown"  
         WindowStartupLocation="Manual"
-        Closing="Close_Duck"
         Title="MrDuck" Height="120" Width="100">
     <Grid>
         <Image HorizontalAlignment="center" Height="75"  VerticalAlignment="center" Width="100" Source="rubberDuck2.png" >

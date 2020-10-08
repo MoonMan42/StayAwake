@@ -1,5 +1,6 @@
 ﻿using Services;
 using System;
+using System.ComponentModel;
 using System.IO;
 using System.Media;
 using System.Windows;
@@ -34,7 +35,7 @@ namespace MrDuck
             PlayQuack();
         }
 
-     
+
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -45,9 +46,11 @@ namespace MrDuck
             }
         }
 
-        private void Close_Duck(object sender, System.ComponentModel.CancelEventArgs e)
+        protected override void OnClosing(CancelEventArgs e)
         {
+            base.OnClosing(e);
             PowerHelper.ResetSystemDefault();
+
         }
 
         private void ExitProgram(object sender, RoutedEventArgs e)
