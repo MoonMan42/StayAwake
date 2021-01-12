@@ -19,6 +19,7 @@
                     <MenuItem x:Name="stayAwakeHeader" Header="Stay Awake" IsCheckable="True" IsChecked="True" Checked="StayAwake_Checked" Unchecked="DoNotStayAwake_UnChecked" />
                     <MenuItem x:Name="muteCheckMenuHeader" Header="Mute" IsCheckable="True" IsChecked="False" Checked="MuteDuck_Checked" Unchecked="MuteDuck_Checked" />
                     <MenuItem Header="Quack!!!" Click="Quack_Click" />
+                    <MenuItem Header="On The Phone" Click="OpenPhoneMsg_Click" />
                     <MenuItem Header="Exit" Click="ExitProgram"/>
                 </ContextMenu>
             </Image.ContextMenu>

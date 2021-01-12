@@ -103,7 +103,14 @@ namespace MrDuck
             SoundPlayer player = new SoundPlayer(MrDuck.AudioResource.Quack);
             player.Play();
         }
+
+        private void OpenPhoneMsg_Click(object sender, RoutedEventArgs e)
+        {
+            OnThePhoneWindow onThePhoneW = new OnThePhoneWindow();
+            onThePhoneW.WindowStartupLocation = WindowStartupLocation.Manual;
+            onThePhoneW.Show();
+        }
     }
 
- 
+
 }
