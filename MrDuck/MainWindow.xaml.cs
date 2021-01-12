@@ -1,8 +1,8 @@
 ﻿using Services;
 using System;
 using System.ComponentModel;
-using System.IO;
 using System.Media;
+using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Input;
 
@@ -48,8 +48,8 @@ namespace MrDuck
 
         protected override void OnClosing(CancelEventArgs e)
         {
-            base.OnClosing(e);
             PowerHelper.ResetSystemDefault();
+            base.OnClosing(e);
 
         }
 
@@ -75,13 +75,10 @@ namespace MrDuck
             if (!muteCheckMenuHeader.IsChecked)
             {
                 isMute = false;
-
-
             }
             else
             {
                 isMute = true;
-
             }
 
             MrDuckSettings.Default.IsMrDuckMute = isMute;
@@ -106,7 +103,7 @@ namespace MrDuck
             SoundPlayer player = new SoundPlayer(MrDuck.AudioResource.Quack);
             player.Play();
         }
-
-
     }
+
+ 
 }
