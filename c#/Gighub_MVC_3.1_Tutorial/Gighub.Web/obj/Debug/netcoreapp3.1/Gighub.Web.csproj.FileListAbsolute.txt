@@ -21,7 +21,6 @@ C:\Users\Matt\Desktop\WorkShop\c#\Gighub_MVC_3.1_Tutorial\Gighub.Web\bin\Debug\n
 C:\Users\Matt\Desktop\WorkShop\c#\Gighub_MVC_3.1_Tutorial\Gighub.Web\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Users\Matt\Desktop\WorkShop\c#\Gighub_MVC_3.1_Tutorial\Gighub.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
 C:\Users\Matt\Desktop\WorkShop\c#\Gighub_MVC_3.1_Tutorial\Gighub.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\Matt\Desktop\WorkShop\c#\Gighub_MVC_3.1_Tutorial\Gighub.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\Matt\Desktop\WorkShop\c#\Gighub_MVC_3.1_Tutorial\Gighub.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\Matt\Desktop\WorkShop\c#\Gighub_MVC_3.1_Tutorial\Gighub.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\Matt\Desktop\WorkShop\c#\Gighub_MVC_3.1_Tutorial\Gighub.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
@@ -90,3 +89,4 @@ C:\Users\Matt\Desktop\WorkShop\c#\Gighub_MVC_3.1_Tutorial\Gighub.Web\obj\Debug\n
 C:\Users\Matt\Desktop\WorkShop\c#\Gighub_MVC_3.1_Tutorial\Gighub.Web\obj\Debug\netcoreapp3.1\Gighub.Web.dll
 C:\Users\Matt\Desktop\WorkShop\c#\Gighub_MVC_3.1_Tutorial\Gighub.Web\obj\Debug\netcoreapp3.1\Gighub.Web.pdb
 C:\Users\Matt\Desktop\WorkShop\c#\Gighub_MVC_3.1_Tutorial\Gighub.Web\obj\Debug\netcoreapp3.1\Gighub.Web.genruntimeconfig.cache
+C:\Users\Matt\Desktop\WorkShop\c#\Gighub_MVC_3.1_Tutorial\Gighub.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
